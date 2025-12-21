@@ -33,7 +33,7 @@
         </main>
 
         {{-- FOOTER--}}
-        <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+        <footer class="text-center p-6 text-gray-500 font-bold uppercase mt-32">
             Devstagram  - todos los derechos reservados {{ now()->year}}
         </footer>
     </body>
