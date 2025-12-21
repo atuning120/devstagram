@@ -2,7 +2,7 @@
 
 
 @section('titulazo')
-Vagina Principal
+gina Principal
 
 @endsection
 

@@ -5,19 +5,26 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Devstagram - @yield('titulo')</title>
-
+        @vite('resources/css/app.css')
 
     </head>
-    <body>
-    <nav>
-            <a href="/">Principal</a>
-            <a href="/nosotros">Nosotros</a>
-        </nav>
-        <h1>@yield('titulazo')</h1>
+    <body class ="bg-gray-100">
+        <header class= "p-5 border-b bg-white shadow">
 
-        <hr>
+            <div class = "container mx-auto flex justify-between items -center">
 
-        @yield('contenido')
+                <h1 class="text-4x1 font-black">
+                    Devstagram
+                </h1>
 
+            <nav class = "flex gap-2">
+                {{-- XDDDDDDDDDDD --}}
+                <a class= "font-bold uppercasse text-gray-600 text-sm"
+                href = "#"> Login </a>
+                <a class= "font-bold uppercasse text-gray-600 text-sm" href = "#"> Crear cuenta </a>
+            </nav>
+
+        </div>
+    </header>
     </body>
 </html>
