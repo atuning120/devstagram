@@ -7,6 +7,7 @@
         <title>Devstagram - @yield('titulo')</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        @vite('resources/css/app.css')
 
     </head>
     <body class="antialiased">
@@ -15,7 +16,7 @@
             <a href="/">principal</a>
         </nav>
 
-        <h1>@yield('titulo')</h1>
+        <h1 class="text-2xl font-bold">@yield('titulo')</h1>
         <hr>
         @yield('contenido')
     </body>
