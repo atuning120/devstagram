@@ -9,3 +9,6 @@ Route::get('/', function () {
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
+Route::get('/crear-cuenta', function () {
+    return view('auth.register');
+});
