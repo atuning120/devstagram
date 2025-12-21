@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,6 +11,5 @@ Route::get('/', function () {
 Route::get('/nosotros', function () {
     return view('nosotros');
 });
-Route::get('/crear-cuenta', function () {
-    return view('auth.register');
-});
+Route::get('/crear-cuenta', [RegisterController::class, 'index']);
+
