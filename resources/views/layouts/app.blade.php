@@ -40,7 +40,7 @@
     </main>
 
 
-    <footer class="text-center p-5 textgray-500 font-bold uppercase">
+    <footer class="mt-10 text-center p-5 textgray-500 font-bold uppercase">
             {{-- ws en php de usa el arroba php @php echo date ('Y') @endphp --
             tambien existen helpers que acortan codigo como por ejemplo el de abajo --}}
 
