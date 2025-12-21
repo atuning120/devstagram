@@ -6,12 +6,13 @@
 
 @section('contenido')
     <div class="md:flex md:justify-center md:gap-10 md:items-center">
-        <div class="md:w-4/12  p-6 shadow">
+        <div class="md:w-6/12  p-6 shadow-xl rounded-lg bg-white">
             <img src="{{ asset('Auth/registrar.jpg')}}" alt="imagen register usuario">
         </div>
 
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow">
-            <form>
+            <form action="/crear-cuenta" method="POST">
+                @csrf
                 <div>
                     <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">
                         Nombre
