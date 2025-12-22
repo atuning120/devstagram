@@ -14,9 +14,11 @@ class RegisterController extends Controller
 
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd('Creando cuenta...');
+        // dd($request);
+
+        dd($request->get('username'));
 
     }
 }
