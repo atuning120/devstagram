@@ -47,7 +47,10 @@ Registrarse
                     name="username"
                     type= "text"
                     placeholder= "Tu nombre pero de usuario"
-                    class= "border p-3 w-full rounded-lg"
+                    class= "border p-3 w-full rounded-lg @error('username')
+                     border-red-500 @enderror"
+                    value={{old('username')}}
+
                     />
                     @error('username')
                     <p class= "bg-red-500 text-white my-2 rounder-lg text-sm p-2 text-center"> {{ $message}} </p>
@@ -55,15 +58,18 @@ Registrarse
                 </div>
 
                 <div class = "mb-5">
-                    <label for="Email" class = "mb-2 block uppercase text-gray-500 font-bold">
+                    <label for="email" class = "mb-2 block uppercase text-gray-500 font-bold">
                         Email
                     </label>
                     <input
-                    id="Email"
-                    name="Email"
+                    id="email"
+                    name="email"
                     type= "email"
                     placeholder= "Tu correo"
-                    class= "border p-3 w-full rounded-lg"
+                    class= "border p-3 w-full rounded-lg @error('email')
+                     border-red-500 @enderror"
+                    value={{old('email')}}
+
                     />
                     @error('email')
                     <p class= "bg-red-500 text-white my-2 rounder-lg text-sm p-2 text-center"> {{ $message}} </p>
@@ -79,7 +85,10 @@ Registrarse
                     name="password"
                     type= "password"
                     placeholder= "Ingrese contrasena"
-                    class= "border p-3 w-full rounded-lg"
+                    class= "border p-3 w-full rounded-lg @error('password')
+                    border-red-500 @enderror"
+                    value={{old('password')}}
+
                     />
                     @error('password')
                     <p class= "bg-red-500 text-white my-2 rounder-lg text-sm p-2 text-center"> {{ $message}} </p>
