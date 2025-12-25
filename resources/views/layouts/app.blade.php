@@ -20,7 +20,7 @@
             <nav class = "flex gap-2">
                 {{-- XDDDDDDDDDDD --}}
                 <a class= "font-bold uppercasse text-gray-600 text-sm"
-                href = "#"> Login </a>
+                href = "/login"> Login </a>
                 <a class= "font-bold uppercasse text-gray-600 text-sm" href = "/crear-cuenta"> Crear cuenta </a>
             </nav>
 
