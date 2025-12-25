@@ -13,6 +13,7 @@ class LoginController extends Controller
     }
 
     public function store(Request $request){
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -22,6 +23,6 @@ class LoginController extends Controller
             return back()->with('mensaje','Credenciales incorrectas');
         }
 
-        return redirect()->route('posts.index');
+        return redirect()->route('posts.index', Auth::user()->username);
     }
 }
