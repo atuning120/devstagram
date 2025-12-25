@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Symfony\Contracts\Service\Attribute\Required;
@@ -39,7 +40,12 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        
+        //autenticar usuario
+        Auth::attempt($request->only('email', 'password'));
+
 
         //redireccionar
+        return redirect()->route('posts.index');
     }
 }
