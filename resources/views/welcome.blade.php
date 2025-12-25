@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 
-@section('titulazo')
-gina Principal
+@section('titulo')
+Pagina Principal
 
 @endsection
 

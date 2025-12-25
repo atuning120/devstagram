@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -17,10 +18,18 @@ class PostController extends Controller
     }
 
 
-    public function index()
+    public function index(User $user)
     {
 
 
-        return view('dashboard');
+        return view('dashboard', [
+            'user'=>$user
+        ]);
+        }
+        public function create()
+        {
+            //dd siempre para ver que esta llegando y despues se retorna las vistas
+            //buena practica, vida wena
+            return view('posts.create');
         }
 }

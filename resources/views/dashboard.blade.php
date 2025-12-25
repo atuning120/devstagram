@@ -1,19 +1,30 @@
 @extends('layouts.app')
 
-@section('titulazo')
-Tu Cuenta
+@section('titulo')
+
+Perfil: {{ $user->username }}
+
 
 @endsection
 
 @section('contenido')
 
     <div class="flex justify-center">
-        <div class="w-full md:w-8/12 lg:w-6/12 md:flex">
-            <div class="md:w-8/12 lg:w-6/12 px-5">
+        <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
+            <div class="md:w-8/12 lg:w-6/12 px-5 flex md:flex md:flex-col items-center md:justify-center nd:items-start py-10">
                 <img src="{{asset('imagenes/usuario.svg')}}" alt="imagen usuario">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5">
-                <p class="text-gray-700 text-2xl">{{ auth()->user()->name }}</p>
+                <p class="text-gray-700 text-2xl">{{ $user->username }}</p>
+
+                <p class="text-gray-800 text-sm mb-3 font-bold mt-5">
+                    0
+                    <span class="font-normal"> Seguidores </span>
+                </p>
+                <p class="text-gray-800 text-sm mb-3 font-bold">
+                    0
+                    <span class="font-normal"> Posts </span>
+
             </div>
         </div>
 

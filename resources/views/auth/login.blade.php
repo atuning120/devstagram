@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulazo')
+@section('titulo')
 
 Inicia sesion en devstagram :D
 
@@ -66,6 +66,10 @@ Inicia sesion en devstagram :D
                     @error('password')
                     <p class= "bg-red-500 text-white my-2 rounder-lg text-sm p-2 text-center"> {{ $message}} </p>
                     @enderror
+                </div>
+
+                <div class="mb-5">
+                    <input type="checkbox" name="remember"> <label class="text-gray-500 text-sm">Mantener mi sesion abierta</label>
                 </div>
 
 

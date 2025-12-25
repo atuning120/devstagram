@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('titulazo')
+@section('titulo')
 
 Registrarse
 

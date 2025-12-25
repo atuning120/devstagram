@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('titulazo')
+@section('titulo')
 Seccion otra vista ejemplo
 
 @endsection
