@@ -1,54 +1,53 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ strreplace('', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Devstagram - @yield('titulo')</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         @vite('resources/css/app.css')
 
     </head>
-    <body class ="bg-gray-100">
-        <header class= "p-5 border-b bg-white shadow">
+    <body class="bg-gray-100">
+        {{-- ENCABEZADO --}}
+        <header class="p-5 border-b bg-white shadow">
 
-            <div class = "container mx-auto flex justify-between items -center">
+            <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-black">Devstagram</h1>
+            @auth
+                <nav class="flex gap-1 items-center">
+                    <a class="font-bold uppercase text-gray-600 text-sm" href="#">
+                        Hola: <span class="font-normal">{{auth()->user()->name}}</span>
+                    </a>
 
-                <h1 class="text-4x1 font-black">
-                    Devstagram
-                </h1>
+                    <a href="{{route('register')}}" class="font-bold uppercase">
+                        Cerrar Sesión
+                    </a>
 
-            <nav class = "flex gap-2">
-                {{-- XDDDDDDDDDDD --}}
-                <a class= "font-bold uppercasse text-gray-600 text-sm"
-                href = "/login"> Login </a>
-                <a class= "font-bold uppercasse text-gray-600 text-sm" href = "/crear-cuenta"> Crear cuenta </a>
-            </nav>
+            @endauth
 
-        </div>
-    </header>
-    <main = class ="container mx-auto mt-10">
+            @guest
+             <nav class="flex gap-2">
+                 <a href="{{route('login')}}" class="font-bold uppercase text-gray-600 text-sm">Login</a>
+                 <a href="{{route('register')}}" class="font-bold uppercase text-gray-600 text-sm">Crear Cuenta</a>
+             </nav>
+            @endguest
+            </div>
+        </header>
 
-        {{-- font color, text centrado --}}
-        <h2 class= "font-black text-center text-3xl mb-10">
-            @yield('titulazo')
+        {{-- CONTENIDO PRINCIPAL --}}
+        <main class="container mx-auto mt-10">
+            <h2 class="font-black text-center text-3xl mb-10">
+                @yield("titualzo")
+            </h2>
+            @yield("contenido")
+        </main>
 
-
-        </h2>
-        @yield('contenido')
-
-
-    </main>
-
-
-    <footer class="mt-10 text-center p-5 textgray-500 font-bold uppercase">
-            {{-- ws en php de usa el arroba php @php echo date ('Y') @endphp --
-            tambien existen helpers que acortan codigo como por ejemplo el de abajo --}}
-
-
-            todos los derechos semen
-            {{ now()->year }}
-
-    </footer>
-
+        {{-- FOOTER--}}
+        <footer class="text-center p-6 text-gray-500 font-bold uppercase mt-32">
+            Devstagram  - todos los derechos reservados {{ now()->year}}
+        </footer>
     </body>
 </html>
