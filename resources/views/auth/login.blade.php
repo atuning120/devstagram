@@ -13,7 +13,7 @@ Inicia sesion en devstagram :D
 
     <div class = "md:flex md:justify-center md:gap-10 md:items-center">
         <div class ="md:w-6/12 bg-white p-6 rounder-lg shadow-xl">
-            <img src= "{{ asset('imagenes/login.jpg') }}" alt="imagen de
+            <img src= "{{ asset('auth/login.jpg') }}" alt="imagen de
             login de usuarios">
         </div>
 

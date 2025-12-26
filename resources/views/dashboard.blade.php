@@ -12,7 +12,7 @@ Perfil: {{ $user->username }}
     <div class="flex justify-center">
         <div class="w-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
             <div class="md:w-8/12 lg:w-6/12 px-5 flex md:flex md:flex-col items-center md:justify-center nd:items-start py-10">
-                <img src="{{asset('imagenes/usuario.svg')}}" alt="imagen usuario">
+                <img src="{{asset('auth/usuario.svg')}}" alt="imagen usuario">
             </div>
             <div class="md:w-8/12 lg:w-6/12 px-5">
                 <p class="text-gray-700 text-2xl">{{ $user->username }}</p>

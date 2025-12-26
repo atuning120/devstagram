@@ -18,7 +18,15 @@ dropzone.on('sending', function(file, xhr, formData){
 
 dropzone.on('success', function(file, response){
     console.log(response);
-    document.querySelector('[name="imagen"]').value = response.imagen;
+    // Mostrar la previsualización de la imagen subida
+    if(file.previewElement && file.previewElement.querySelector("img")) {
+        file.previewElement.querySelector("img").src = `/uploads/${response.imagen}`;
+    }
+    // Guardar el nombre en el input oculto
+    const inputImagen = document.querySelector('[name="imagen"]');
+    if(inputImagen) {
+        inputImagen.value = response.imagen;
+    }
 });
 
 dropzone.on('error', function(file, message){
@@ -27,5 +35,8 @@ dropzone.on('error', function(file, message){
 );
 
 dropzone.on('removedfile', function(){
-    document.querySelector('[name="imagen"]').value = "";
-}); 
+    const inputImagen = document.querySelector('[name="imagen"]');
+    if(inputImagen) {
+        inputImagen.value = "";
+    }
+});
