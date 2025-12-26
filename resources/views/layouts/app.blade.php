@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        @stack('styles')
         <title>Devstagram - @yield('titulo')</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        @vite('resources/css/app.css')
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     </head>
     <body class="bg-gray-100">
@@ -31,7 +31,9 @@
                     Crear Post
                     </a>
 
-                    <a class="font-bold text-gray-600 text-sm" href="#">
+                    <a
+                     class="font-bold text-gray-600 text-sm"
+                    href="{{route('posts.index', auth()->user()->username)}}">
                         Hola:
                         <span class="font-normal">
                             {{auth()->user()->username}}
