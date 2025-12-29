@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,6 +31,29 @@ class PostController extends Controller
         {
             //dd siempre para ver que esta llegando y despues se retorna las vistas
             //buena practica, vida wena
+
             return view('posts.create');
+        }
+
+        public function store(Request $request)
+        {
+            //dd('creando un post');
+
+            //validacion
+            $this->validate($request,[
+                'titulo'=>'required|max:255',
+                'descripcion'=>'required',
+                'imagen'=>'required'
+            ]);
+
+            //almacenar la imagen
+            Post::create([
+                'titulo'=>$request->titulo,
+                'descripcion'=>$request->descripcion,
+                'imagen'=>$request->imagen,
+                'user_id'=>Auth::user()->id
+            ]);
+
+            return redirect()->route('posts.index',Auth::user()->username);
         }
 }
