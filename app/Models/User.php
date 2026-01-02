@@ -46,4 +46,15 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function isAdmin(): bool
+    {
+        return $this->username === 'admin';
+    }
+
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

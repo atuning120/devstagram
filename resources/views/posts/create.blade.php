@@ -79,5 +79,7 @@ Crear Nuevo Post
         </form>
     </div>
 </div>
+
+    
 @endsection
 

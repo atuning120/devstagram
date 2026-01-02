@@ -22,9 +22,10 @@ class PostController extends Controller
     public function index(User $user)
     {
 
-
+        $posts=Post::where('user_id',$user->id)-> paginate(5);
         return view('dashboard', [
-            'user'=>$user
+            'user'=>$user,
+            'posts'=>$posts
         ]);
         }
         public function create()
@@ -54,6 +55,19 @@ class PostController extends Controller
                 'user_id'=>Auth::user()->id
             ]);
 
+
+            $request->user()->posts()->create([
+                'titulo'=>$request->titulo,
+                'descripcion'=>$request->descripcion,
+                'imagen'=>$request->imagen,
+                'user_id'=>Auth::user()->id
+            ]);
             return redirect()->route('posts.index',Auth::user()->username);
+        }
+        public function show(User $user, Post $post)
+        {
+            return view('posts.show',[
+                'post'=>$post,
+            ]);
         }
 }
