@@ -70,6 +70,9 @@ class PostController extends Controller
         //Ejecutar el Policy
         $this->authorize('delete', $post);
 
+        // Eliminar comentarios asociados (si no se ha configurado onDelete cascade en la BD)
+        $post->comentarios()->delete();
+
         $post->delete();
 
         //Eliminar la imagen
