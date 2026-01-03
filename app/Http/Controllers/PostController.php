@@ -15,7 +15,7 @@ class PostController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['show','index']);
     }
 
 
@@ -68,6 +68,18 @@ class PostController extends Controller
         {
             return view('posts.show',[
                 'post'=>$post,
+                'user'=>$user
             ]);
+        }
+        public function destroy(Post $post)
+        {
+            //Ejecutar el Policy
+            $this->authorize('delete', $post);
+
+            //Eliminar el post
+            $post->delete();
+
+            //Redireccionar
+            return redirect()->route('posts.index',Auth::user()->username);
         }
 }
