@@ -6,23 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Testing\Fluent\Concerns\Has;
 
-class Post extends Model
+class Comentario extends Model
 {
-    use HasFactory;
+
+    use HasFactory; 
+
     protected $fillable = [
-        'titulo',
-        'descripcion',
-        'imagen',
         'user_id',
+        'post_id',
+        'comentario',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class)->select('name','id', 'username');
-    }
-
-    public function comentarios()
-    {
-        return $this->hasMany(Comentario::class);
     }
 }
